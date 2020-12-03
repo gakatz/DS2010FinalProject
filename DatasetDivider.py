@@ -1,15 +1,9 @@
 # Takes the data and divides it into training and testing data
-
-from sklearn.model_selection import train_test_split
 import pandas as pd
+from sklearn.model_selection import train_test_split
 
-x_list = ["Name", "Category", "km4week", "sp4week", "CrossTraining", "Wall21"]
-y_list = ["MarathonTime"]
-x = pd.read_csv("MarathonData.csv", usecols = x_list)
-y = pd.read_csv("MarathonData.csv", usecols = y_list)
-# x.to_csv(index=False)
-# y.to_csv(index=False)
-
+x = pd.read_csv("MarathonDataX.csv") # reading CSV into a dataframe
+y = pd.read_csv("MarathonDataY.csv") # reading CSV into a data frame
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.75, random_state=42)
 

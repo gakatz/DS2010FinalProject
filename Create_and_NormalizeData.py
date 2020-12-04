@@ -9,10 +9,13 @@ y = pd.read_csv("InitialMarathonData.csv", usecols = y_list) # reading CSV into 
 x = x.fillna(value = 0);
 
 def FixCrossTraining(string):
+    print(string)
     if string == "":
         return 0;
+    if string == 0:
+        return 0;
     else:
-        return string(9);
+        return string[9];
 
 x['CrossTraining'] = x['CrossTraining'].apply(FixCrossTraining)
 
@@ -34,11 +37,12 @@ def addMaleOver40(string):
         return_value = 1;
     return return_value;
 
+# Default is that the athlete is a male under the age of 40
 x['isWAM'] = x['Category'].apply(addWAM) # adding the isWAM column
-x['isMAM'] = x['Category'].apply(addMAM) # adding the isMAM column
 x['isMaleOver40'] = x['Category'].apply(addMaleOver40) # adding the isMaleOver40 column
 
 # Now removing empty rows and the Category column
+del x["Category"]
 
 print(x)
 

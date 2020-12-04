@@ -12,3 +12,19 @@ print(f"Train labels:\n{y_train}")
 print(f"Test labels:\n{x_test}")
 print(f"Train labels:\n{y_test}")
 
+def addMAM(string):
+    return_value = 0;
+    if string == "MAM":
+        return_value = 1;
+    return return_value;
+
+def addMaleOver40(string):
+    return_value = 0;
+    if string != "MAM" and string != "WAM":
+        return_value = 1;
+    return return_value;
+
+x['isWAM'] = x['Category'].apply(addWAM) # adding the isWAM column
+x['isMAM'] = x['Category'].apply(addMAM) # adding the isMAM column
+x['isMaleOver40'] = x['Category'].apply(addMaleOver40) # adding the isMaleOver40 column
+

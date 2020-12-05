@@ -1,7 +1,5 @@
 from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
 import numpy as np
-from yellowbrick.datasets import load_concrete
 from yellowbrick.regressor import ResidualsPlot
 import pandas as pd
 

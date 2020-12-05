@@ -17,3 +17,5 @@ model.fit(x_training, y_training)
 # Getting r_squared
 r_sq = model.score(x_testing, y_testing)
 print('coefficient of determination:', r_sq)
+
+# Calculating adjusted_r_squared

@@ -9,13 +9,26 @@ y_training = pd.read_csv("MarathonDataYTraining.csv") # reading CSV into a dataf
 x_testing = pd.read_csv("MarathonDataXTesting.csv") # reading CSV into a dataframe
 y_testing = pd.read_csv("MarathonDataYTesting.csv") # reading CSV into a dataframe
 
+x_training = x_training.to_numpy()
+y_training = y_training.to_numpy()
+x_testing = x_testing.to_numpy()
+y_testing = y_testing.to_numpy()
+
+y_training = np.delete(y_training, index = 0, axis = 1)
+y_training = np.delete(y_training, index = 1, axis = 1)
+y_testing = np.delete(y_testing, index = 0, axis = 1)
+y_testing = np.delete(y_testing, index = 1, axis = 1)
+
+y_training = y_training.flatten()
+y_testing = y_testing.flatten()
+
 print(x_training.shape)
 print(y_training.shape)
 print(x_testing.shape)
 print(y_testing.shape)
 
 # Creating an instance of the class Linear Regression
-model = RandomForestRegressor()
+model = LinearRegression()
 
 # Fitting model to data
 model.fit(x_training, y_training)

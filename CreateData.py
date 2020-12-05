@@ -54,5 +54,6 @@ x['isMaleOver40'] = x['Category'].apply(addMaleOver40) # adding the isMaleOver40
 # Now removing the Category column
 del x["Category"]
 
+
 x.to_csv('MarathonDataX.csv') # saving data as a CSV
 y.to_csv('MarathonDataY.csv') # saving data as a CSV

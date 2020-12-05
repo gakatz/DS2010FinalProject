@@ -19,7 +19,7 @@ marathon_data['CrossTraining'] = marathon_data['CrossTraining'].apply(FixCrossTr
 
 # Now dropping rows that are missing data
 marathon_data = marathon_data.drop(index = [25, 34, 51, 53, 73, 80], axis = 0)
-
+marathon_data = marathon_data.drop(index = [0,1,2], axis = 1)
 
 # Saving the updated marathon data
 marathon_data.to_csv('UpdatedMarathonData.csv') # saving data as a CSV

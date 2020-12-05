@@ -1,7 +1,6 @@
 # Creating and normalizing data
 
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
 
 XandYlist = ["Category", "km4week", "sp4week", "CrossTraining", "Wall21", "MarathonTime"] # creating list of columns for x and y
 marathon_data = pd.read_csv("InitialMarathonData.csv", usecols = XandYlist)
